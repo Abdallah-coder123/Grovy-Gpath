@@ -1,0 +1,3 @@
+def query=data.course.name
+print query//[[selenium,Appium],[selenium,Postman]] بجيب كل name inside array
+__________________________________________
