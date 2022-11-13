@@ -2,7 +2,7 @@ def query=data.course.name
 print query//[[selenium,Appium],[selenium,Postman]] بجيب كل name inside array
 __________________________________________
 
-pm.test("Verify all object",()=>{
+pm.test("Verify on array objectes",()=>{
     _.each(jsonData.items,(el)=>{
         pm.expect(el.caseTypeName).to.include("Remittance")
     })
