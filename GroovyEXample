@@ -7,3 +7,7 @@ pm.test("Verify on array objectes",()=>{
         pm.expect(el.caseTypeName).to.include("Remittance")
     })
 })
+_________________________________________________________---
+ let array = jsonData.items.length;
+    let index = Math.floor((Math.random() * array));
+    ____________________________
