@@ -1,0 +1,23 @@
+pm.test("Verify all results are Remittance", () => {
+    _.each(jsonData.items, (el) => {
+        pm.expect(el.caseTypeName).to.include("Remittance");
+    })
+})
+
+pm.test("Verify all caseTypeId equals 1", () => {
+    _.each(jsonData.items, (el) => {
+        pm.expect(el.caseTypeId).to.equal(1);
+    })
+})
+
+pm.test("Set case id, custName and caseTypeName", () => {
+    let index = Math.floor(Math.random() * 10);
+    const caseId = jsonData.items[index].id;
+    const custName = jsonData.items[index].custName;
+    const caseTypeName=jsonData.items[index].caseTypeName;
+
+    pm.environment.set("caseId", caseId);
+    pm.environment.set("custName", custName);
+    pm.environment.set("caseTypeName",caseTypeName)
+
+});
