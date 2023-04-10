@@ -1,0 +1,17 @@
+stages:
+    - test
+
+newman_tests:
+    stage: test
+    image: 
+        name: postman/newman_alpine33
+        entrypoint: [""]
+    script:
+        - newman --version
+        - npm install -g newman-reporter-htmlextra
+        - newman run APICWSDLToRest.json -e env.json --delay-request 500 --reporters cli,htmlextra --reporter-htmlextra-export testReport.html --insecure 
+    artifacts:
+        when: always
+        paths:
+            - testReport.html
+
